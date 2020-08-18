@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://josephwww.github.io">
-  <title>测试基本原则 | Hexo</title>
+  <title>测试基本原则 | Joseph&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="(1) 所有的测试都应追溯到用户需求。(2) 应当把“尽早地和不断地进行软件测试”作为座右铭。(3) pareto原则：测试发现的错误中80%很可能起源于20%的模块中。(4) 完全测试是不可能的，测试需要终止。(5) 应由独立的第三方来构造测试。(6) 充分注意测试中的群集现象。(7) 尽量避免测试的随意性(8) 兼顾合理的输入和不合理的输入数据。(9) 程序修改后要回归测试。(10) 应长期保">
 <meta property="og:type" content="article">
 <meta property="og:title" content="测试基本原则">
 <meta property="og:url" content="https://josephwww.github.io/2020/08/16/%E5%AD%A6%E4%B9%A0%E6%B5%8B%E8%AF%95%E7%9F%A5%E8%AF%86/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Joseph&#39;s Space">
 <meta property="og:description" content="(1) 所有的测试都应追溯到用户需求。(2) 应当把“尽早地和不断地进行软件测试”作为座右铭。(3) pareto原则：测试发现的错误中80%很可能起源于20%的模块中。(4) 完全测试是不可能的，测试需要终止。(5) 应由独立的第三方来构造测试。(6) 充分注意测试中的群集现象。(7) 尽量避免测试的随意性(8) 兼顾合理的输入和不合理的输入数据。(9) 程序修改后要回归测试。(10) 应长期保">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-08-16T09:11:21.000Z">
 <meta property="article:modified_time" content="2020-08-16T15:29:07.415Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Joseph Wang">
 <meta property="article:tag" content="测试">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Joseph&#39;s Space" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -186,20 +186,29 @@ var _hmt = _hmt || [];
             <article id="post-学习测试知识" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
-      <header class="article-header">
-        
+<header class="article-header">
+  
   
     <h1 class="article-title" itemprop="name">
       测试基本原则
     </h1>
   
 
-        
-        <a href="" class="archive-article-date">
+  
+  <a href="" class="archive-article-date">
   	<time datetime="2020-08-16T09:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
 </a>
-        
-      </header>
+  
+    
+    
+  
+    <span class="archive-article-date">
+        阅读量 <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+    
+    
+</header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -396,14 +405,40 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		2020 Joseph Wang
+		<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		<script>
+		var now = new Date(); 
+		function createtime() { 
+			var grt= new Date("07/02/2020 01:00:00");//此处修改你的建站时间或者网站上线时间 
+			now.setTime(now.getTime()+250); 
+			days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+			hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+			if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+			mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+			seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+			snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+			document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+			document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+		} 
+		setInterval("createtime()",250);
+		</script>
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      		<span id="busuanzi_container_site_pv">
+                本站总访问量：<span id="busuanzi_value_site_pv"></span>次
+            </span>
+            <span class="post-meta-divider">|</span>
+            <span id="busuanzi_container_site_uv">
+                本站访客数：<span id="busuanzi_value_site_uv"></span>人
+            </span>
       	</div>
     </div>
   </div>
 </footer>
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
