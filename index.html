@@ -180,6 +180,103 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python二维数组创建的陷阱" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="2020/08/24/python%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA%E7%9A%84%E9%99%B7%E9%98%B1/">python二维数组创建的陷阱</a>
+    </h1>
+  
+
+  
+  <a href="2020/08/24/python%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA%E7%9A%84%E9%99%B7%E9%98%B1/" class="archive-article-date">
+  	<time datetime="2020-08-24T12:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天在做腾讯的机考题时，在创建二维数组的时候发现了一个奇怪的问题，我需要创建一个n*n的二维数组初始化为0，我最初是这样子写的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; 10</span><br><span class="line">myList &#x3D; [[0] * n] * n</span><br><span class="line">myList[0][1] &#x3D; 1</span><br><span class="line">myList</span><br><span class="line">&gt;&gt;&gt; [[0, 1, 0, ...], [0, 1, 0, ...], [0, 1, 0, ...], [0, 1, 0, ...], ...]</span><br></pre></td></tr></table></figure>
+
+<p>我在debug后发现所有的一维数组都被赋值了，意识到这些一维数组可能都是0号位的浅拷贝(shallow copies)，要建立深拷贝，一行的代码可以用generator:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myList = [([<span class="number">0</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> range(n))]</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="2020/08/24/python%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E5%88%9B%E5%BB%BA%E7%9A%84%E9%99%B7%E9%98%B1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-面试题：数组中重复的数字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -231,6 +328,10 @@ var _hmt = _hmt || [];
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
         		</li>
@@ -463,7 +564,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/测试//" class="article-tag-list-link color3">测试</a>
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
         		</li>
       		
 		</ul>
@@ -553,7 +654,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/测试//" class="article-tag-list-link color3">测试</a>
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
         		</li>
       		
 		</ul>
