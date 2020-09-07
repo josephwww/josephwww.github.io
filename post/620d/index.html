@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://josephwww.github.io">
-  <title>测试基本原则 | Joseph&#39;s Space</title>
+  <title>力扣：递增子序列 | Joseph&#39;s Space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="(1) 所有的测试都应追溯到用户需求。(2) 应当把“尽早地和不断地进行软件测试”作为座右铭。(3) pareto原则：测试发现的错误中80%很可能起源于20%的模块中。(4) 完全测试是不可能的，测试需要终止。(5) 应由独立的第三方来构造测试。(6) 充分注意测试中的群集现象。(7) 尽量避免测试的随意性(8) 兼顾合理的输入和不合理的输入数据。(9) 程序修改后要回归测试。(10) 应长期保">
+  <meta name="description" content="给定一个整型数组, 你的任务是找到所有该数组的递增子序列，递增子序列的长度至少是2。 输入: [4, 6, 7, 7]输出: [[4, 6], [4, 7], [4, 6, 7], [4, 6, 7, 7], [6, 7], [6, 7, 7], [7,7], [4,7,7]] 说明:  给定数组的长度不会超过15。 数组中的整数范围是 [-100,100]。 给定数组中可能包含重复数字，相等的数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试基本原则">
-<meta property="og:url" content="https://josephwww.github.io/2020/08/16/%E5%AD%A6%E4%B9%A0%E6%B5%8B%E8%AF%95%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:title" content="力扣：递增子序列">
+<meta property="og:url" content="https://josephwww.github.io/post/620d/index.html">
 <meta property="og:site_name" content="Joseph&#39;s Space">
-<meta property="og:description" content="(1) 所有的测试都应追溯到用户需求。(2) 应当把“尽早地和不断地进行软件测试”作为座右铭。(3) pareto原则：测试发现的错误中80%很可能起源于20%的模块中。(4) 完全测试是不可能的，测试需要终止。(5) 应由独立的第三方来构造测试。(6) 充分注意测试中的群集现象。(7) 尽量避免测试的随意性(8) 兼顾合理的输入和不合理的输入数据。(9) 程序修改后要回归测试。(10) 应长期保">
+<meta property="og:description" content="给定一个整型数组, 你的任务是找到所有该数组的递增子序列，递增子序列的长度至少是2。 输入: [4, 6, 7, 7]输出: [[4, 6], [4, 7], [4, 6, 7], [4, 6, 7, 7], [6, 7], [6, 7, 7], [7,7], [4,7,7]] 说明:  给定数组的长度不会超过15。 数组中的整数范围是 [-100,100]。 给定数组中可能包含重复数字，相等的数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-16T09:11:21.000Z">
-<meta property="article:modified_time" content="2020-08-24T13:17:24.728Z">
+<meta property="article:published_time" content="2020-08-25T15:56:32.000Z">
+<meta property="article:modified_time" content="2020-08-30T03:43:06.994Z">
 <meta property="article:author" content="Joseph Wang">
-<meta property="article:tag" content="测试">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="力扣">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Joseph&#39;s Space" type="application/atom+xml">
@@ -80,11 +81,11 @@ var _hmt = _hmt || [];
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../../../index.html">主页</a></li>
+				<li><a href="../../index.html">主页</a></li>
 	        
-				<li><a href="../../../../categories">归档</a></li>
+				<li><a href="../../categories">归档</a></li>
 	        
-				<li><a href="../../../../archives">分类</a></li>
+				<li><a href="../../archives">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -106,15 +107,15 @@ var _hmt = _hmt || [];
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="../../../../https:/github.com/josephwww" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="../../https:/github.com/josephwww" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="../../../../https:/weibo.com/1837095831/profile" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="../../https:/weibo.com/1837095831/profile" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="qq" target="_blank" href="../../../../http:/mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ATczNjcyOTQ1OEFwcC9ibmw" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="../../http:/mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ATczNjcyOTQ1OEFwcC9ibmw" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="mail" target="_blank" href="../../../../mailto:me@hfwong.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="../../mailto:me@hfwong.com" title="mail"><i class="icon-mail"></i></a>
 		        
-					<a class="facebook" target="_blank" href="../../../../https:/www.facebook.com/people/Joseph-Wang/100003711175676" title="facebook"><i class="icon-facebook"></i></a>
+					<a class="facebook" target="_blank" href="../../https:/www.facebook.com/people/Joseph-Wang/100003711175676" title="facebook"><i class="icon-facebook"></i></a>
 		        
 			</div>
 		</nav>
@@ -151,15 +152,15 @@ var _hmt = _hmt || [];
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="../../../../https:/github.com/josephwww" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="../../https:/github.com/josephwww" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="../../../../https:/weibo.com/1837095831/profile" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="../../https:/weibo.com/1837095831/profile" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="qq" target="_blank" href="../../../../http:/mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ATczNjcyOTQ1OEFwcC9ibmw" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="../../http:/mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ATczNjcyOTQ1OEFwcC9ibmw" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="mail" target="_blank" href="../../../../mailto:me@hfwong.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="../../mailto:me@hfwong.com" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="facebook" target="_blank" href="../../../../https:/www.facebook.com/people/Joseph-Wang/100003711175676" title="facebook"><i class="icon-facebook"></i></a>
+						<a class="facebook" target="_blank" href="../../https:/www.facebook.com/people/Joseph-Wang/100003711175676" title="facebook"><i class="icon-facebook"></i></a>
 			        
 				</div>
 			</nav>
@@ -168,11 +169,11 @@ var _hmt = _hmt || [];
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="../../../../index.html">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="../../index.html">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../../../categories">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="../../categories">归档</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../../../archives">分类</a></li>
+					<li style="width: 33.333333333333336%"><a href="../../archives">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -187,20 +188,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-学习测试知识" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-力扣：递增子序列" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
 <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      测试基本原则
+      力扣：递增子序列
     </h1>
   
 
   
   <a href="" class="archive-article-date">
-  	<time datetime="2020-08-16T09:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+  	<time datetime="2020-08-25T15:56:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
 </a>
   
     
@@ -216,7 +217,77 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>(1) 所有的测试都应追溯到用户需求。<br>(2) 应当把“尽早地和不断地进行软件测试”作为座右铭。<br>(3) pareto原则：测试发现的错误中80%很可能起源于20%的模块中。<br>(4) 完全测试是不可能的，测试需要终止。<br>(5) 应由独立的第三方来构造测试。<br>(6) 充分注意测试中的群集现象。<br>(7) 尽量避免测试的随意性<br>(8) 兼顾合理的输入和不合理的输入数据。<br>(9) 程序修改后要回归测试。<br>(10) 应长期保留用例，直至系统废弃。</p>
+        <p>给定一个整型数组, 你的任务是找到所有该数组的递增子序列，递增子序列的长度至少是2。</p>
+<p>输入: [4, 6, 7, 7]<br>输出: [[4, 6], [4, 7], [4, 6, 7], [4, 6, 7, 7], [6, 7], [6, 7, 7], [7,7], [4,7,7]]</p>
+<p><strong>说明:</strong></p>
+<ol>
+<li>给定数组的长度不会超过15。</li>
+<li>数组中的整数范围是 [-100,100]。</li>
+<li>给定数组中可能包含重复数字，相等的数字应该被视为递增的一种情况。</li>
+</ol>
+<h2 id="解法一：动态规划-哈希表"><a href="#解法一：动态规划-哈希表" class="headerlink" title="解法一：动态规划+哈希表"></a>解法一：动态规划+哈希表</h2><a id="more"></a>
+
+<ol>
+<li><p>最开始的情况：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;(nums[<span class="number">0</span>], )&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用集合<code>pres</code>来保存，后来扩展，每一步都将当前递增之序列加入<code>pres</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pres.update(&#123;j+(i, ) <span class="keyword">for</span> j <span class="keyword">in</span> pres <span class="keyword">if</span> j[<span class="number">-1</span>] &lt;= i&#125;)</span><br><span class="line">pres.add((i, ))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回符合要求的递增子序列</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findSubsequences</span>(<span class="params">self, nums: List[int]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        pres = &#123;(nums[<span class="number">0</span>], )&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">            pres.update(&#123;j+(i, ) <span class="keyword">for</span> j <span class="keyword">in</span> pres <span class="keyword">if</span> j[<span class="number">-1</span>] &lt;= i&#125;)</span><br><span class="line">            pres.add((i, ))</span><br><span class="line">        <span class="keyword">return</span> [list(i) <span class="keyword">for</span> i <span class="keyword">in</span> pres <span class="keyword">if</span> len(i) &gt; <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<h2 id="解法二：深度优先搜索-哈希表"><a href="#解法二：深度优先搜索-哈希表" class="headerlink" title="解法二：深度优先搜索+哈希表"></a>解法二：深度优先搜索+哈希表</h2><ol>
+<li><p>定义返回列表<code>res</code>保存所有递增子序列：</p>
+</li>
+<li><p>深度优先搜索（<code>dfs</code>），参数：<code>nums</code>，<code>tmp</code>保存当前递增子序列：</p>
+<ul>
+<li><p>如果当前递增子序列符合要求：<code>res</code>增加<code>tmp</code></p>
+</li>
+<li><p>定义集合保存状态，避免重复！</p>
+</li>
+<li><p><code>inx, i</code>循环<code>nums</code>的索引值对。</p>
+<ul>
+<li>如果当前值在以前已被遍历：<ul>
+<li>跳出当前循环，开始下一次循环。</li>
+</ul>
+</li>
+<li>如果<code>i</code>加入<code>tmp</code>可以形成递增子序列：<ul>
+<li><code>i</code>为键，<code>1</code>为值加入集合；</li>
+<li>递归：<ul>
+<li><code>nums = nums[inx+1:]；</code><ul>
+<li><code>tmp = tmp+[i]</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>调用<code>dfs</code>：</p>
+<ul>
+<li><code>nums = nums</code></li>
+<li><code>tmp = []</code></li>
+</ul>
+</li>
+<li><p>返回<code>res</code></p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findSubsequences</span>(<span class="params">self, nums: List[int]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        res = []</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">nums: List[int], tmp: List[int]</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">            <span class="keyword">if</span> len(tmp) &gt; <span class="number">1</span>:</span><br><span class="line">                res.append(tmp)</span><br><span class="line">            curPres = set()</span><br><span class="line">            <span class="keyword">for</span> inx, i <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">                <span class="keyword">if</span> i <span class="keyword">in</span> curPres:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> tmp <span class="keyword">or</span> i &gt;= tmp[<span class="number">-1</span>]:</span><br><span class="line">                    curPres.add(i)</span><br><span class="line">                    dfs(nums[inx+<span class="number">1</span>:], tmp+[i])</span><br><span class="line"></span><br><span class="line">        dfs(nums, [])</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="解法三：广度优先搜索-哈希表"><a href="#解法三：广度优先搜索-哈希表" class="headerlink" title="解法三：广度优先搜索+哈希表"></a>解法三：广度优先搜索+哈希表</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findSubsequences</span>(<span class="params">self, nums: List[int]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        res = []</span><br><span class="line">        d = deque([(nums, [])])</span><br><span class="line">        <span class="keyword">while</span> d:</span><br><span class="line">            cur, new = d.popleft()</span><br><span class="line">            <span class="keyword">if</span> len(new) &gt; <span class="number">1</span>:</span><br><span class="line">                res.append(new)</span><br><span class="line">            curPres = set()</span><br><span class="line">            <span class="keyword">for</span> inx, i <span class="keyword">in</span> enumerate(cur):</span><br><span class="line">                <span class="keyword">if</span> i <span class="keyword">in</span> curPres:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> new <span class="keyword">or</span> i &gt;= new[<span class="number">-1</span>]:</span><br><span class="line">                    curPres.add(i)</span><br><span class="line">                    d.append((cur[inx+<span class="number">1</span>:], new+[i]))</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+
+
+
 
       
 
@@ -266,7 +337,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">力扣</a>
         		</li>
       		
 		</ul>
@@ -333,7 +408,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://josephwww.github.io/2020/08/16/%E5%AD%A6%E4%B9%A0%E6%B5%8B%E8%AF%95%E7%9F%A5%E8%AF%86/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://josephwww.github.io/post/620d/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -347,18 +422,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="../../18/%E6%B5%8B%E8%AF%95%E8%A6%86%E7%9B%96%E5%87%86%E5%88%99/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="../a2bf/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          测试覆盖准则
+          最长回文字符串算法：Manacher&#39;s Algorithm
         
       </div>
     </a>
   
   
-    <a href="../../13/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">第一个博客</div>
+    <a href="../b04b/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python二维数组创建的陷阱</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -385,7 +460,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">解法一：动态规划+哈希表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8C%EF%BC%9A%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-number">2.</span> <span class="toc-text">解法二：深度优先搜索+哈希表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%89%EF%BC%9A%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-number">3.</span> <span class="toc-text">解法三：广度优先搜索+哈希表</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -543,6 +618,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -556,6 +635,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -611,15 +694,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="../../../../https:/anu.edu.au/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ANU官网</a>
+              <a href="../../https:/anu.edu.au/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>ANU官网</a>
             </li>
           
             <li class="search-li">
-              <a href="../../../../https:/hexo.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>hexo官网</a>
+              <a href="../../https:/hexo.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>hexo官网</a>
             </li>
           
             <li class="search-li">
-              <a href="../../../../https:/github.com/litten/hexo-theme-yilia" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>yilia(此博客主题)</a>
+              <a href="../../https:/github.com/litten/hexo-theme-yilia" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>yilia(此博客主题)</a>
             </li>
           
         </ul>
