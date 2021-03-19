@@ -184,6 +184,843 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-反转字符串中的单词" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/3fe6/">反转字符串中的单词</a>
+    </h1>
+  
+
+  
+  <a href="../../post/3fe6/" class="archive-article-date">
+  	<time datetime="2020-08-30T04:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-30</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天真是值得纪念的一天：我生日</p>
+<p>生日归生日，以后的饭还是要恰的，于是就继续Leetcode每日一题，今天他可能为了让我的生日过得愉快一点，为我准备了一道简单的题：</p>
+<p><em>给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：<span class="string">&quot;Let&#x27;s take LeetCode contest&quot;</span></span><br><span class="line">输出：<span class="string">&quot;s&#x27;teL ekat edoCteeL tsetnoc&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><em>在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。</em></strong></p>
+<p>为了庆祝生日，我写出了一行解法：</p>
+        
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/3fe6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-最长回文字符串算法：Manacher-s-Algorithm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/a2bf/">最长回文字符串算法：Manacher&#39;s Algorithm</a>
+    </h1>
+  
+
+  
+  <a href="../../post/a2bf/" class="archive-article-date">
+  	<time datetime="2020-08-29T03:18:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天的leetcode每日一题是最短回文串，题目是这样子的：</p>
+<p><em>给定一个字符串 **</em>s** ，你可以通过在字符串前面添加字符将其转换为回文串。找到并返回可以用这种方式转换的最短回文串。*</p>
+<p><em>示例1</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="string">&quot;aacecaaa&quot;</span></span><br><span class="line">输出: <span class="string">&quot;aaacecaaa&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><em>示例2</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="string">&quot;abcd&quot;</span></span><br><span class="line">输出: <span class="string">&quot;dcbabcd&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>我的解法是这样的：</p>
+        
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/a2bf/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-力扣：递增子序列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/620d/">力扣：递增子序列</a>
+    </h1>
+  
+
+  
+  <a href="../../post/620d/" class="archive-article-date">
+  	<time datetime="2020-08-25T15:56:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定一个整型数组, 你的任务是找到所有该数组的递增子序列，递增子序列的长度至少是2。</p>
+<p>输入: [4, 6, 7, 7]<br>输出: [[4, 6], [4, 7], [4, 6, 7], [4, 6, 7, 7], [6, 7], [6, 7, 7], [7,7], [4,7,7]]</p>
+<p><strong>说明:</strong></p>
+<ol>
+<li>给定数组的长度不会超过15。</li>
+<li>数组中的整数范围是 [-100,100]。</li>
+<li>给定数组中可能包含重复数字，相等的数字应该被视为递增的一种情况。</li>
+</ol>
+<h2 id="解法一：动态规划-哈希表"><a href="#解法一：动态规划-哈希表" class="headerlink" title="解法一：动态规划+哈希表"></a>解法一：动态规划+哈希表</h2>
+        
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">力扣</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/620d/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-python二维数组创建的陷阱" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/b04b/">python二维数组创建的陷阱</a>
+    </h1>
+  
+
+  
+  <a href="../../post/b04b/" class="archive-article-date">
+  	<time datetime="2020-08-24T12:43:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天在做腾讯的机考题时，在创建二维数组的时候发现了一个奇怪的问题，我需要创建一个n*n的二维数组初始化为0，我最初是这样子写的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n &#x3D; 10</span><br><span class="line">myList &#x3D; [[0] * n] * n</span><br><span class="line">myList[0][1] &#x3D; 1</span><br><span class="line">myList</span><br><span class="line">&gt;&gt;&gt; [[0, 1, 0, ...], [0, 1, 0, ...], [0, 1, 0, ...], [0, 1, 0, ...], ...]</span><br></pre></td></tr></table></figure>
+
+<p>我在debug后发现所有的一维数组都被赋值了，意识到这些一维数组可能都是0号位的浅拷贝(shallow copies)，要建立深拷贝，一行的代码可以用generator:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">myList = [([<span class="number">0</span>] * n <span class="keyword">for</span> i <span class="keyword">in</span> range(n))]</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/b04b/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-面试题：数组中重复的数字" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/50f4/">面试题：数组中重复的数字</a>
+    </h1>
+  
+
+  
+  <a href="../../post/50f4/" class="archive-article-date">
+  	<time datetime="2020-08-23T10:18:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-23</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>题目一：找出数组中重复的数字</p>
+<p>在一个长度为n的数组里的所有数字都在(0, n). 数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。例如，如果输入长度为7的数组{2, 3, 1, 0, 2, 5, 3}，那么对应得到输出是重复的数字2或者3</p>
+        
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指offer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/50f4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-isalpha-对中文也有效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/a5b4/">str.isalpha() 对中文也有效</a>
+    </h1>
+  
+
+  
+  <a href="../../post/a5b4/" class="archive-article-date">
+  	<time datetime="2020-08-20T12:40:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记今天在处理数据时候遇到的一个坑</p>
+<p>isalpha() 的中文文档是这样描述的：</p>
+<p><code>Python isalpha() 方法检测字符串是否只由字母组成。</code></p>
+<p>在实际操作上，他把中文字符也当作alphabet来处理，想要只判断英文，要把字符串的encoding设置成 UTF-8，具体操作如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sample_str = <span class="string">&#x27;你好呀Joseph&#x27;</span></span><br><span class="line">sample_str.isalpha()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="literal">True</span></span><br><span class="line">sample_str.encode(<span class="string">&#x27;utf-8&#x27;</span>).isalpha()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/海关实习//" class="article-tag-list-link color5">海关实习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/a5b4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-测试覆盖准则" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/6be8/">测试覆盖准则</a>
+    </h1>
+  
+
+  
+  <a href="../../post/6be8/" class="archive-article-date">
+  	<time datetime="2020-08-18T14:05:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>测试覆盖准则：（由强到弱）</p>
+<ul>
+<li><p>语句覆盖</p>
+<ul>
+<li>是使得程序中每个语句至少被执行一次</li>
+</ul>
+</li>
+<li><p>判定覆盖</p>
+<ul>
+<li>使程序中的每个分支至少都通过一次</li>
+</ul>
+</li>
+<li><p>条件覆盖</p>
+<ul>
+<li>判定中的每个条件取到各种可能的值</li>
+</ul>
+</li>
+<li><p>判定/条件覆盖</p>
+<ul>
+<li>判定中的每个条件取到各种可能的值，并使每个判定取到各种可能的结果</li>
+</ul>
+</li>
+<li><p>条件组合覆盖</p>
+<ul>
+<li>使每个判定中条件的各种可能组合都至少出现一次 </li>
+</ul>
+</li>
+<li><p>路径覆盖</p>
+<ul>
+<li>执行所有可能执行的路径</li>
+</ul>
+</li>
+</ul>
+
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/6be8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-学习测试知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+<header class="article-header">
+  
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="../../post/cc19/">测试基本原则</a>
+    </h1>
+  
+
+  
+  <a href="../../post/cc19/" class="archive-article-date">
+  	<time datetime="2020-08-16T09:11:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-16</time>
+</a>
+  
+    
+    
+  
+    
+    
+</header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>(1) 所有的测试都应追溯到用户需求。<br>(2) 应当把“尽早地和不断地进行软件测试”作为座右铭。<br>(3) pareto原则：测试发现的错误中80%很可能起源于20%的模块中。<br>(4) 完全测试是不可能的，测试需要终止。<br>(5) 应由独立的第三方来构造测试。<br>(6) 充分注意测试中的群集现象。<br>(7) 尽量避免测试的随意性<br>(8) 兼顾合理的输入和不合理的输入数据。<br>(9) 程序修改后要回归测试。<br>(10) 应长期保留用例，直至系统废弃。</p>
+
+      
+
+
+
+  <div class="declare" hidden="hidden"></div>
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/秋招准备//" class="article-tag-list-link color5">秋招准备</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="../../post/cc19/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第一个博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -407,6 +1244,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -419,15 +1260,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">剑指offer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
             
             <div class="clearfix"></div>
