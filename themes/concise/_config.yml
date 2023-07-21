@@ -1,0 +1,45 @@
+# Header
+menu:
+  首页: /
+  前端: /categories/front-end
+  后端: /categories/back-end
+  标签: /tags
+  归档: /archives
+  订阅: /atom.xml
+  关于: /about
+
+# Content
+excerpt_link: 阅读更多
+content_max_width: 800px
+
+# Sidebar
+author:
+  name: Hongfeng Joseph Wang
+  work: Backend Developer &amp; Data Analyst
+  location: Shenzhen, China
+  avatar_url: /images/avatar.jpg
+
+# Links:
+links:
+  - svg: ./source/svg/_github.svg
+    url: https://github.com/josephwww
+
+# github comment 
+git_commit:
+  enable: true
+  client_id: 34e9e7be368180180f74
+  client_secret: f5f81a0e7e7c79098fc6219e61c9b76994067208
+  repo: josephwww.github.io
+  owner: josephwww
+  admin:
+    - josephwww
+  per_page: 10
+
+
+# 百度统计
+baidu:
+  id: 0036a19bd80bbca3c53e5d3222055b95
+
+# Miscellaneous
+rss: /atom.xml
+favicon: /images/favicon.ico
