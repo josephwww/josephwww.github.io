@@ -1,11 +1,11 @@
 # Header
 menu:
   首页: /
-  前端: /categories/front-end
-  后端: /categories/back-end
-  标签: /tags
+#  前端: /categories/front-end
+#  后端: /categories/back-end
+#  标签: /tags
   归档: /archives
-  订阅: /atom.xml
+#  订阅: /atom.xml
   关于: /about
 
 # Content
