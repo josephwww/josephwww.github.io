@@ -1,15 +1,15 @@
 # Header
 menu:
-  Index: /
+  Home: /
 #  前端: /categories/front-end
 #  后端: /categories/back-end
-#  标签: /tags
+  Tags: /tags
   Archives: /archives
 #  订阅: /atom.xml
   About: /about
 
 # Content
-excerpt_link: 阅读更多
+excerpt_link: Read More
 content_max_width: 800px
 
 # Sidebar
