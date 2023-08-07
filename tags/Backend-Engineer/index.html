@@ -7,7 +7,7 @@
 
     
 
-    <title>First Post | Joseph</title>
+    <title>Tag: Backend Engineer | Joseph</title>
     <meta name="author" content="Joseph" />
     <meta name="keywords" content="" />
     <meta name="description" content="" />
@@ -38,7 +38,11 @@
 
 
     <!--[if lt IE 9]><style type="text/css">.nav-inner {top:0;}.author-meta {position:static;top:0;}.search-form {height:36px;}</style><script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 <body>
 
     <main class="app">
@@ -53,7 +57,11 @@
     <nav id="nav-inner" class="nav-inner">
         
             <a class="nav-item" href="/">
-                <span class="nav-text">Index</span>
+                <span class="nav-text">Home</span>
+            </a>
+        
+            <a class="nav-item active" href="/tags">
+                <span class="nav-text">Tags</span>
             </a>
         
             <a class="nav-item" href="/archives">
@@ -72,8 +80,6 @@
     <div id="aside-inner" class="aside-inner">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="https://hfwong.com"></form>
 
-        
-        
         
         
 
@@ -124,65 +130,58 @@
 
         <div id="content" class="content">
             <div id="wrapper" class="wrapper" style="max-width: 800px">
-                <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            First Post
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="https://hfwong.com/2023/07/21/First-Post/index.html">
-    
-    <i class="icon-calendar vm"></i>
-    
-    <time class="vm" datetime="2023-07-21T07:13:34.000Z" itemprop="datePublished">2023-07-21</time>
-</a>
-
-            
-
-        </div>
-    </header>
-    
-    <section class="article-body markdown-body">
-        
-        
-        
-    </section>
-</article>
+                
 
 
-
-<div class="comments">
-    <div id="comments"></div>
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-    new Gitalk({
-        clientID: "34e9e7be368180180f74",
-        clientSecret: "f5f81a0e7e7c79098fc6219e61c9b76994067208",
-        repo: "josephwww.github.io",
-        owner: "josephwww",
-        admin: ["josephwww"],
-        id: "9f8d923d5d9632209503cbf19a79c3be",
-        distractionFreeMode: true,
-        title: "First Post",
-        body: "https://hfwong.com/2023/07/21/First-Post/",
-        labels: []
-    }).render('comments');
-    </script>
+<div class="page-hd">
+    Backend Engineer
+    <small>(1)</small>
 </div>
+
+
+
+    
+    
+    
+    
+    
+    <section class="archives-wrap">
+    <div class="archive-year-wrap">
+    <a href="/archives/2023" class="page-hd">
+        2023
+    </a>
+    </div>
+    <ol class="archives">
+    
+
+    <li class="archive-section-item">
+        
+<article class="archive-article archive-type-post">
+    <div class="archive-article-inner">
+        <header class="archive-article-header">
+            <a class="archive-article-link" href="/2023/08/01/First-Post/">About Me</a>
+            <span class="archive-article-date">
+                (<a class="article-date" href="/archives/2023/08">
+    
+    <time class="vm" datetime="2023-08-01T07:33:59.000Z" itemprop="datePublished">8/1</time>
+</a>
+)
+            </span>
+        </header>
+    </div>
+</article>
+    </li>
+
+
+</ol></section>
+
+
 
 
 
             </div>
         </div>
 
-        
-            
-            
-            <a id="pageprev" href="/2023/07/21/tags/" class="article-prev" title="tags"><i class="icon-arrow-left"></i></a>
-            
         
 
         <footer class="footer">
@@ -256,33 +255,6 @@
         });
     });
     </script>
-    
-        
-<script src="/js/scrollspy.min.js"></script>
-
-        <script type="text/javascript">
-        $(document.body).scrollspy({target: '#aside-inner'});
-
-        $(window).on('resize', function() {
-            var hw = $('#header').width();
-            var ww = $('#wrapper').width();
-            var space = ($(this).width() - hw - ww) / 2 / 2;
-
-            var pageprev = $('#pageprev');
-            var pagenext = $('#pagenext');
-            var avg = (pageprev.width() + pagenext.width()) / 2
-
-            if(space > avg) {
-                var len = space - avg / 2;
-                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
-                pageprev.css($.extend({left: hw + len}, styles));
-                pagenext.css($.extend({right: len}, styles));
-            } else {
-                pageprev.removeAttr('style');
-                pagenext.removeAttr('style');
-            }
-        }).trigger('resize');
-        </script>
     
 
 </body>
