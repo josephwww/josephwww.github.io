@@ -1,7 +1,7 @@
 ---
 title: About Me
 date: 2023-08-01 15:33:59
-tags: [Introduction, Data Analyst, Backend Engineer, Data Science]
+tags: [Introduction, Data Analyst, Backend Engineer, Python]
 top: True
 ---
 
@@ -19,8 +19,6 @@ Hey there! I'm Hongfeng Wang(Joseph), a passionate Data Analyst with a strong ba
   - Master's in Data Science - Australian National University (ANU), 2021
 
 ## Work Experience
-
-![Work Experience](/images/sangfor-logo.jpeg)
 
 After completing my studies, I embarked on a journey as a Backend Engineer at Sangfor, China, where I spent two fulfilling years contributing to the development of innovative software solutions. During this time, I honed my skills in software engineering, problem-solving, and teamwork.
 
