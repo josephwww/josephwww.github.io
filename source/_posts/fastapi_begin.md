@@ -31,9 +31,9 @@ FastAPI is an asynchronous web framework that is designed to be easy to use and 
 ### 6. WebSocket Support:
    FastAPI supports WebSocket communication out of the box, providing a seamless way to implement real-time features in your applications.
    
-### Easy Start
+## Easy Start
     ```bash
-    pip install fastapi uvicorn
+    pip install fastapi[all]
     
     ```
     ```python
