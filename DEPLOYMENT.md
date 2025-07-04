@@ -12,7 +12,7 @@
 
 - `HOST`: 你的服务器IP地址或域名
 - `USERNAME`: SSH登录用户名
-- `SSH_KEY`: 私钥内容（用于SSH连接）
+- `DEPLOY_KEY`: 私钥内容（用于SSH连接）
 
 #### 2. 生成SSH密钥对
 
@@ -44,16 +44,14 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 1. 安装依赖
 2. 运行 `npx hexo generate` 生成静态文件
 3. 将 `public/*` 目录内容上传到服务器的 `/var/www/hexo-blog`
-4. 设置正确的文件权限
 
 ### 工作流程
 
 - 当推送代码到 `main` 或 `master` 分支时触发
 - 使用Ubuntu最新版本作为运行环境
 - 使用Node.js 18
-- 缓存npm依赖以加速构建
+- 使用actions/cache@v4缓存npm依赖以加速构建
 - 使用SCP上传文件到服务器
-- 自动设置文件权限
 
 ### 故障排除
 
