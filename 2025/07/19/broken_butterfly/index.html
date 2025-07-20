@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>折翼蝴蝶——英伟达期权实战 | Joseph</title>
+    <meta name="author" content="Joseph" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="折翼蝴蝶——英伟达期权实战玩期权也有一段时间了，最近一直在琢磨怎么能让自己的交易策略更上一层楼。如果你也和我一样，已经厌倦了单腿期权那种“要么猜对方向赚翻，要么猜错方向归零”的简单粗暴，那么这篇文章，也许能给你一些启发。坦白说，这个NVDA的蝴蝶交易，我是跟着我超爱看的一个YouTuber——“华尔街阿宝”做的。 我觉得，对于我们这些学习者来说，先“抄作业”，再去深入研究大神为什么这么做，是一个非常高效的学习路径。下面，我就来复盘一下这个操作，看看我们到底赚的是什么钱。目标很明确：学会传说中的“" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="Joseph" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]><style type="text/css">.nav-inner {top:0;}.author-meta {position:static;top:0;}.search-form {height:36px;}</style><script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script><![endif]-->
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Joseph</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">Home</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">Tags</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">Archives</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">About</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="https://hfwong.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8A%98%E7%BF%BC%E8%9D%B4%E8%9D%B6%E2%80%94%E2%80%94%E8%8B%B1%E4%BC%9F%E8%BE%BE%E6%9C%9F%E6%9D%83%E5%AE%9E%E6%88%98"><span class="toc-number">1.</span> <span class="toc-text">折翼蝴蝶——英伟达期权实战</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%99%EF%BC%9A%E8%BF%94%E7%92%9E%E5%BD%92%E7%9C%9F%EF%BC%8C%E6%8A%8A%E5%9F%BA%E6%9C%AC%E5%8A%9F%E5%88%BB%E8%BF%9BDNA"><span class="toc-number">1.0.1.</span> <span class="toc-text">第一站：返璞归真，把基本功刻进DNA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%99%EF%BC%9A%E5%8F%8C%E5%89%91%E5%90%88%E7%92%A7%EF%BC%8C%E4%BB%B7%E5%B7%AE%E7%AD%96%E7%95%A5%E7%9A%84%E9%AD%85%E5%8A%9B"><span class="toc-number">1.0.2.</span> <span class="toc-text">第二站：双剑合璧，价差策略的魅力</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%99%EF%BC%9A%E5%88%9D%E8%A7%81%E8%9D%B4%E8%9D%B6%EF%BC%8C%E7%8E%A9%E8%BD%AC%E2%80%9C%E5%8C%BA%E9%97%B4%E4%BA%A4%E6%98%93%E2%80%9D"><span class="toc-number">1.0.3.</span> <span class="toc-text">第三站：初见蝴蝶，玩转“区间交易”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%88%98%E6%8B%86%E8%A7%A3%EF%BC%9A%E4%BB%8E%E2%80%9C%E6%8A%84%E4%BD%9C%E4%B8%9A%E2%80%9D%E5%88%B0%E8%9E%8D%E4%BC%9A%E8%B4%AF%E9%80%9A%E2%80%94%E2%80%94%E6%88%91%E7%9A%84NVDA%E8%9D%B4%E8%9D%B6%E5%A4%8D%E7%9B%98"><span class="toc-number">1.0.4.</span> <span class="toc-text">实战拆解：从“抄作业”到融会贯通——我的NVDA蝴蝶复盘</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            折翼蝴蝶——英伟达期权实战
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://hfwong.com/2025/07/19/broken_butterfly/index.html">
+    
+    <i class="icon-calendar vm"></i>
+    
+    <time class="vm" datetime="2025-07-19T07:21:45.000Z" itemprop="datePublished">2025-07-19</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag vm"></i>
+    <a class="article-tag-link" href="/tags/%E7%BE%8E%E8%82%A1/" rel="tag">美股</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="折翼蝴蝶——英伟达期权实战"><a href="#折翼蝴蝶——英伟达期权实战" class="headerlink" title="折翼蝴蝶——英伟达期权实战"></a>折翼蝴蝶——英伟达期权实战</h1><p>玩期权也有一段时间了，最近一直在琢磨怎么能让自己的交易策略更上一层楼。如果你也和我一样，已经厌倦了单腿期权那种“要么猜对方向赚翻，要么猜错方向归零”的简单粗暴，那么这篇文章，也许能给你一些启发。<strong>坦白说，这个NVDA的蝴蝶交易，我是跟着我超爱看的一个YouTuber——“华尔街阿宝”做的。</strong> 我觉得，对于我们这些学习者来说，先“抄作业”，再去深入研究大神为什么这么做，是一个非常高效的学习路径。下面，我就来复盘一下这个操作，看看我们到底赚的是什么钱。</p>
+<p>目标很明确：<strong>学会传说中的“折翼蝴蝶”（Broken-Wing Butterfly）策略。</strong></p>
+<span id="more"></span>
+
+<hr>
+<h3 id="第一站：返璞归真，把基本功刻进DNA"><a href="#第一站：返璞归真，把基本功刻进DNA" class="headerlink" title="第一站：返璞归真，把基本功刻进DNA"></a>第一站：返璞归真，把基本功刻进DNA</h3><p>虽然我已经会买Call买Put了，但我发现，要玩转高级组合，对基础的理解必须更深一个层次。</p>
+<ul>
+<li><p>**希腊字母 (The Greeks)**：衡量期权风险的四个核心指标。</p>
+<ul>
+<li><strong>Delta (Δ)<strong>：简单说，就是股价涨1块钱，我的期权价格涨多少。它代表了我的</strong>方向性</strong>。</li>
+<li>**Gamma (Γ)**：这是Delta的变化速度。它像个加速器，尤其在快到期的时候，股价一动，Delta就跟着疯跑。蝴蝶策略的精髓，一半就在这Gamma里。</li>
+<li><strong>Theta (Θ)<strong>：</strong>时间就是金钱</strong>，这句话在期权里体现得淋漓尽致。Theta就是时间流逝的速度，作为期权卖方，它是我最好的朋友，每天帮我“收租”。</li>
+<li><strong>Vega (ν)<strong>：衡量</strong>市场情绪（波动率）</strong>对期权价格的影响。情绪高涨（IV高），期权贵；情绪低落（IV低），期权便宜。做个聪明的交易者，就要学会在别人恐慌时卖“保险”（卖期权），在别人贪婪时买“彩票”（买期权）。</li>
+</ul>
+</li>
+<li><p>**引伸波幅 (Implied Volatility - IV)**：这是市场的“恐慌指数”。学会看IV Rank&#x2F;Percentile，我就能知道现在的期权价格是“史高”还是“白菜价”，这直接决定了我该用什么策略。</p>
+</li>
+</ul>
+<hr>
+<h3 id="第二站：双剑合璧，价差策略的魅力"><a href="#第二站：双剑合璧，价差策略的魅力" class="headerlink" title="第二站：双剑合璧，价差策略的魅力"></a>第二站：双剑合璧，价差策略的魅力</h3><p>单腿期权是“单相思”，风险收益无限。而价差策略，就像找到了一个搭档，通过一买一卖，把风险和收益都锁定在一个可控的范围里。</p>
+<ul>
+<li><p>**垂直价差 (Vertical Spreads)**：这是最基础的组合，一买一卖，方向相同，到期日相同，但行权价不同。</p>
+<ul>
+<li><strong>收钱的（Credit Spread）</strong>：我觉得股价<em>不会</em>涨破&#x2F;跌破某个位置，就卖出一组价差，先收一笔权利金。这是“收租”的玩法，胜率高。</li>
+<li><strong>花钱的（Debit Spread）</strong>：我觉得股价<em>会</em>涨&#x2F;会跌，就花钱买一组价差。这是“买彩票”的玩法，赔率高。</li>
+</ul>
+</li>
+<li><p>**日历价差 (Calendar Spreads)**：买一个远期的，卖一个近期的。赚的就是近期期权时间价值掉得快这个差价。这个策略让我对“时间”的玩法有了更深的理解。</p>
+</li>
+</ul>
+<hr>
+<h3 id="第三站：初见蝴蝶，玩转“区间交易”"><a href="#第三站：初见蝴蝶，玩转“区间交易”" class="headerlink" title="第三站：初见蝴蝶，玩转“区间交易”"></a>第三站：初见蝴蝶，玩转“区间交易”</h3><p>好了，最激动人心的部分来了。把两个价差策略组合在一起，就形成了像蝴蝶翅膀一样的对称结构。</p>
+<ul>
+<li><p>**铁鹰 (Iron Condor)**：它像是两对分开的翅膀，由一个看涨的信用价差和一个看跌的信用价差组成。我赌的是股价会在一个宽阔的区间里震荡，只要别飞出我的“翅膀”范围，我就能稳稳地收租。</p>
+</li>
+<li><p>**标准蝴蝶 (Butterfly Spread)**：这就是我们今天的主角。它把翅膀并拢了，形成一个像“帐篷”一样的风险图。我赌的是，到期那天，股价会精准地停在我的“帐篷尖”上。</p>
+</li>
+</ul>
+<hr>
+<h3 id="实战拆解：从“抄作业”到融会贯通——我的NVDA蝴蝶复盘"><a href="#实战拆解：从“抄作业”到融会贯通——我的NVDA蝴蝶复盘" class="headerlink" title="实战拆解：从“抄作业”到融会贯通——我的NVDA蝴蝶复盘"></a>实战拆解：从“抄作业”到融会贯通——我的NVDA蝴蝶复盘</h3><p>好了，理论说了这么多，不如直接上实战案例。</p>
+<p><strong>背景：</strong></p>
+<ul>
+<li><strong>时间</strong>：2025年7月15日</li>
+<li><strong>股票</strong>：英伟达 (NVDA)</li>
+<li><strong>当时股价</strong>：假设在172.5美元附近</li>
+<li><strong>我的操作（完全照搬阿宝）</strong>：<ul>
+<li><strong>买入 1 张 167.5 Call</strong> （这是我左边的“翅膀”）</li>
+<li><strong>卖出 2 张 172.5 Call</strong> （这是我的“身体”）</li>
+<li><strong>买入 1 张 175 Call</strong> （这是我右边的“翅膀”）</li>
+</ul>
+</li>
+</ul>
+<p><strong>到期日：</strong> 2025年7月18日</p>
+<p><strong>结果：</strong> 7月18日收盘时，NVDA股价精准地停在了 <strong>172.4美元</strong>。</p>
+<p><strong>为什么跟着阿宝能赚钱？我们来算一笔账。</strong></p>
+<p>这个组合的核心在于中间卖出的那两张172.5的Call。我构建这个组合的时候，总花费其实非常低，因为卖出期权的收入几乎可以抵消买入期权的成本。</p>
+<p>当股价在到期日无限接近我们卖出的行权价（172.5美元）时，奇迹发生了：</p>
+<ol>
+<li><strong>我买的 167.5 Call</strong>：它变成了实值期权（In-the-Money）。它的价值大约是 <code>收盘价 - 行权价</code> &#x3D; <code>172.4 - 167.5</code> &#x3D; <strong>4.9美元</strong>。</li>
+<li><strong>我卖的 172.5 Call</strong>：这两张期权几乎变成了废纸（Out-of-the-Money），因为股价没有超过172.5。它们的价值趋近于0。我们当初卖掉它们收到的权利金，几乎可以全部收入囊中。</li>
+<li><strong>我买的 175 Call</strong>：这张期权也是废纸一张，价值为0。</li>
+</ol>
+<p><strong>我的利润来源，正是那个价值4.9美元的167.5 Call！</strong> 减去我当初构建这个组合时付出的极低成本（假设是0.2美元），我的净利润就非常可观了。</p>
+<p>这个策略的盈利逻辑，就像是<strong>用极低的成本，去赌一个高概率发生的“精准打击”</strong>。我们不需要股价暴涨，只需要它在到期时，安安静静地停在我们设定的“帐篷顶”附近。这就是蝴蝶策略的精髓：<strong>赚取时间价值（Theta）和波动率下降（Vega Crush）的钱</strong>。</p>
+<p>当然，如果股价飞得太远，比如涨到180或者跌到160，我就会亏损，但最大的亏损也被我买入的“翅膀”给锁定了，不会血本无归。</p>
+
+        
+    </section>
+</article>
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "34e9e7be368180180f74",
+        clientSecret: "f5f81a0e7e7c79098fc6219e61c9b76994067208",
+        repo: "josephwww.github.io",
+        owner: "josephwww",
+        admin: ["josephwww"],
+        id: "f6f49f967326f3d7305de79b2e6eea7c",
+        distractionFreeMode: true,
+        title: "折翼蝴蝶——英伟达期权实战",
+        body: "https://hfwong.com/2025/07/19/broken_butterfly/",
+        labels: ["美股"]
+    }).render('comments');
+    </script>
+</div>
+
+
+
+            </div>
+        </div>
+
+        
+            
+            <a id="pagenext" href="/2025/07/04/test_20250704/" class="article-next" title="2025年7月7日盘前关注重点"><i class="icon-arrow-right"></i></a>
+            
+            
+        
+
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">	
+        粤ICP备2025442383号-1
+        </a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?0036a19bd80bbca3c53e5d3222055b95";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://unpkg.com/jquery@1.9.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle('normal', slideDone);
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp('normal', slideDone);
+            }, 3000);
+        }
+
+        function slideDone() {
+            if (nodes.navInner.css('display') !== 'none') {
+                nodes.navInner.css('display', '');
+            }
+        }
+
+        $(window).on('resize', function() {
+            if ($(this).width() > 960) {
+                nodes.navInner.css('display', '');
+            }
+        });
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: hw + len}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>
